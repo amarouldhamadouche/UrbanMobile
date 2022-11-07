@@ -334,34 +334,37 @@ export default function ModifierLeTrajet() {
   return (
     <View style={styles.container}>
       <StatusBar
-        backgroundColor={mainColor}
+        backgroundColor={"white"}
         barStyle="dark-content"
         hidden={false}
       />
-      <Svg
+       <View
         style={{
-          position: "absolute",
-          top: -StatusBar.currentHeight * 0.35,
-          width: Dimensions.get("window").width,
-          height: Dimensions.get("window").height * 0.14,
-          zIndex: 1,
+          flexDirection: "row",
+          alignItems: "center",
+
+          paddingVertical: 5,
+          width: "100%",
         }}
-        xmlns="http://www.w3.org/2000/svg"
-        viewBox="0 0 1440 320"
       >
-        <Path
-          fill={mainColor}
-          fill-opacity="1"
-          d="M0,128L80,154.7C160,181,320,235,480,213.3C640,192,800,96,960,74.7C1120,53,1280,107,1360,133.3L1440,160L1440,0L1360,0C1280,0,1120,0,960,0C800,0,640,0,480,0C320,0,160,0,80,0L0,0Z"
-        ></Path>
-      </Svg>
-      <TouchableOpacity
-        style={[styles.littleCard, { justifyContent: "center" }]}
-        onPress={() => navigation.goBack()}
-      >
-        <Icons size={25} name="arrow-left" color={mainColor} />
-      </TouchableOpacity>
-      <Text style={styles.bold}>Modifier le trajet</Text>
+        <TouchableOpacity
+          style={{ padding: 5, borderRadius: 20 }}
+          onPress={() => navigation.goBack()}
+        >
+          <Icons size={25} name="arrow-left" color="black" />
+        </TouchableOpacity>
+        <Text style={{ marginLeft: 20, fontWeight: "bold", fontSize: 17 }}>
+          Modifier votre trajet 
+        </Text>
+      </View>
+      <View
+        style={{
+          borderBottomColor: "black",
+          borderBottomWidth: 1,
+          marginVertical: 10,
+          marginHorizontal: 30,
+        }}
+      ></View>
       <ScrollView keyboardShouldPersistTaps="always">
         <TouchableWithoutFeedback onPress={() => Keyboard.dismiss()}>
           <View style={styles.center}>

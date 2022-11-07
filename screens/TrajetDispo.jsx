@@ -18,7 +18,6 @@ import Feather from "react-native-vector-icons/Feather";
 import { useNavigation, useRoute } from "@react-navigation/native";
 import Autocomplete from "react-native-autocomplete-input";
 import { mainColor } from "./mainColor";
-import Svg, { Path } from "react-native-svg";
 import { trajets, wilaya } from "../assets/dummyData";
 export default function TrajetDispo() {
   const route = useRoute();
@@ -104,30 +103,15 @@ export default function TrajetDispo() {
     <View style={styles.container}>
       <StatusBar backgroundColor={mainColor} hidden={false} />
 
-      <Svg
-        style={{
-          position: "absolute",
-          top: -StatusBar.currentHeight * 0.35,
-          width: Dimensions.get("window").width,
-          height: Dimensions.get("window").height * 0.14,
-          zIndex: 1,
-        }}
-        xmlns="http://www.w3.org/2000/svg"
-        viewBox="0 0 1440 320"
-      >
-        <Path
-          fill={mainColor}
-          fill-opacity="1"
-          d="M0,128L80,154.7C160,181,320,235,480,213.3C640,192,800,96,960,74.7C1120,53,1280,107,1360,133.3L1440,160L1440,0L1360,0C1280,0,1120,0,960,0C800,0,640,0,480,0C320,0,160,0,80,0L0,0Z"
-        ></Path>
-      </Svg>
+    
+    
 
       {!user && (
         <View
           style={{
             width: Dimensions.get("window").width,
             height: "10%",
-            marginTop: "14%",
+            marginTop: "7%",
             paddingRight: "5%",
             justifyContent: "center",
             alignItems: "flex-end",
